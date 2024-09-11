@@ -15,7 +15,7 @@
         </div>
     </div>
 </x-app-layout> -->
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -126,4 +126,4 @@
     <!--Container for content-->
     <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-18"></div>
   </body>
-</html>
+</html> --}}
