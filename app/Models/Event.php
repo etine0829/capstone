@@ -18,4 +18,9 @@ class Event extends Model
         'venue',
         'type_of_scoring'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

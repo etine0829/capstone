@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table = "event";
+    protected $table = "category";
 
     protected $fillable =[
         'event_id',

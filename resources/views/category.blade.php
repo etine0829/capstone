@@ -1,4 +1,4 @@
-{{-- <x-layout>
+<x-layout>
     <div class="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
         <h2 class="text-xl font-semibold mb-4">CATEGORY</h2>
 
@@ -12,4 +12,4 @@
             <button class="bg-yellow-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-yellow-600">Done</button>
         </div>
     </div>
-</x-layout> --}}
+</x-layout>
