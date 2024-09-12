@@ -19,6 +19,11 @@ class Category extends Model
         'category_name',
         
     ];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
     public function event()
     {
         return $this->belongsTo(Event::class, 'event_id');
