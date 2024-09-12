@@ -208,7 +208,7 @@
                     <h2 class="text-lg font-bold text-gray-800">Event Information</h2>
 
                     <!-- Event Information Form -->
-                    <form action="{{route('add_event')}}" method="POST">
+                    <form action="{{ route('add_event') }}" method="POST">
                         @csrf
                         <div class="space-y-4">
                             <!-- Event Title -->

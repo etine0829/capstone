@@ -2,10 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EventController;
+    
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route to display the event list ////IMPORTANTTTTTTTT
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
+
+// Route to add a new event (this will handle the form submission)
+Route::post('/events/add', [EventController::class, 'addEvent'])->name('add_event');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
