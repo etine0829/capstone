@@ -186,9 +186,9 @@
                                 <p class="text-gray-600">Venue: <span class="text-gray-800">{{$event->venue}}</span></p>
                             </div>
                             <div class=>
-                                <button class="hover:bg-slate-400 ml-[150px]">
+                                <a href="{{ route('events.manage', ['id' => $event->id]) }}" class="hover:bg-slate-400 ml-[150px]">
                                     MANAGE
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -233,7 +233,7 @@
                             <div>
                                 <label for="scoringSystem" class="block text-sm font-medium text-gray-700">Scoring System</label>
                                 <input type="text" id="scoringSystem" name="type_of_scoring" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
-                            </div>
+                            </div>  
                             
                             <!-- Upload Poster -->
                             <div>

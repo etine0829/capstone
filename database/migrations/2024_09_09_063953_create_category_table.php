@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('event_id');
-            $table->string('category_name');
+            $table->string('category_name')->nullable();
             $table->timestamps();
 
             $table->foreign('event_id')->references('id')->on('event')->onDelete('restrict');

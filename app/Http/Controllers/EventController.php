@@ -35,6 +35,15 @@ class EventController extends Controller
         return redirect()->back()->with('success', 'Event added successfully!');
 
     }
+        public function manageEvent($id)
+    {
+        $event = Event::find($id);  // Fetch the event by its ID
+        if (!$event) {
+            return redirect()->back()->with('error', 'Event not found.');
+        }
+        
+        return view('manage_event', ['event' => $event]);
+    }
 
     
 }
