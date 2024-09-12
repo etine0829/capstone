@@ -16,6 +16,29 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <div class="form-group row">
+            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+
+            <div class="col-md-6">
+                <select id="role" class="form-control @error('role') is-invalid @enderror" name="role" required>
+                    @if (!App\Models\User::where('role', 'admin')->exists())
+                        <option value="admin">Admin</option>
+                    @endif
+                    <option value="admin">Admin</option>
+                    <option value="judge">Judge</option>
+                    <option value="event_manager">Event Manager</option>
+                    <option value="staff">Admin Staff</option>
+        
+                </select>
+
+                @error('role')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
