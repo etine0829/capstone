@@ -8,10 +8,11 @@ use App\Models\Event; // Ensure you import the Event model
 class EventController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         $event = Event::all();
         return view('event', ['events' => $event]);
-        
+
     }
     public function addEvent(Request $request)
     {
@@ -21,15 +22,28 @@ class EventController extends Controller
             'event_date' => 'required|date_format:Y-m-d\TH:i',
             'venue' => 'required|string',
             'type_of_scoring' => 'required|string',
+            'category_id' => 'required|exists:category,id'
         ]);
-          
-    
+
+
         // Debugging
 
-    
+
         // Attempt to create the event
         Event::create($validatedData);
-    
+
         return redirect()->back()->with('success', 'Event added successfully!');
+
     }
+        public function manageEvent($id)
+    {
+        $event = Event::find($id);  // Fetch the event by its ID
+        if (!$event) {
+            return redirect()->back()->with('error', 'Event not found.');
+        }
+        
+        return view('manage_event', ['event' => $event]);
+    }
+
+    
 }

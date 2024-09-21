@@ -12,9 +12,15 @@ class Event extends Model
     protected $table = "event";
 
     protected $fillable =[
+        'event_id',
         'event_name',
         'event_date',
         'venue',
         'type_of_scoring'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
